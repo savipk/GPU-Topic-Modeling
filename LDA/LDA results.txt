@@ -1,0 +1,280 @@
+Results
+
+val a = loadFMat("mat5000.txt")
+val k =50
+val (nn,opts) = LDA.learner(a,k)
+opts.npasses=1
+nn.train
+==========
+===100 rows
+=======
+shape: (100, 1229)
+
+val (nn,opts) = LDA.learner(a,k)
+===============================
+scala> nn.train
+corpus perplexity=83.180849
+pass= 0
+ 6.00%, ll=-3.74846, gf=0.003, secs=3.4, GB=0.00, MB/s= 0.01, GPUmem=0.82
+43.00%, ll=-2.44757, gf=0.019, secs=3.5, GB=0.00, MB/s= 0.06, GPUmem=0.82
+80.00%, ll=-2.62602, gf=0.034, secs=3.6, GB=0.00, MB/s= 0.11, GPUmem=0.82
+100.00%, ll=-1.86357, gf=0.042, secs=3.6, GB=0.00, MB/s= 0.14, GPUmem=0.82
+Time=3.5900 secs, gflops=0.04
+
+scala> nn.train
+corpus perplexity=83.180849
+pass= 0
+ 6.00%, ll=-3.71335, gf=0.605, secs=0.0, GB=0.00, MB/s= 2.05, GPUmem=0.82
+43.00%, ll=-2.46449, gf=0.689, secs=0.1, GB=0.00, MB/s= 2.27, GPUmem=0.82
+80.00%, ll=-2.62687, gf=0.768, secs=0.2, GB=0.00, MB/s= 2.52, GPUmem=0.82
+100.00%, ll=-1.84242, gf=0.800, secs=0.2, GB=0.00, MB/s= 2.63, GPUmem=0.82
+Time=0.1870 secs, gflops=0.80
+
+CPU
+====
+1 loops, best of 1: 71.3 ms per loop
+
+
+========
+===500 rows
+========
+shape: (500, 3184)
+
+val (nn,opts) = LDA.learner(a,k)
+================================
+
+scala> nn.train
+corpus perplexity=395.698584
+pass= 0
+ 6.00%, ll=-5.72030, gf=2.364, secs=0.1, GB=0.00, MB/s= 8.08, GPUmem=0.82
+43.00%, ll=-4.77644, gf=7.406, secs=0.1, GB=0.00, MB/s=24.62, GPUmem=0.82
+80.00%, ll=-4.84040, gf=8.849, secs=0.2, GB=0.01, MB/s=29.35, GPUmem=0.82
+100.00%, ll=-3.58280, gf=8.648, secs=0.2, GB=0.01, MB/s=28.68, GPUmem=0.82
+Time=0.2220 secs, gflops=8.65
+
+scala> nn.train
+corpus perplexity=395.698584
+pass= 0
+ 6.00%, ll=-5.74254, gf=8.353, secs=0.0, GB=0.00, MB/s=28.53, GPUmem=0.82
+43.00%, ll=-4.80192, gf=8.999, secs=0.1, GB=0.00, MB/s=29.91, GPUmem=0.82
+80.00%, ll=-4.86252, gf=9.926, secs=0.2, GB=0.01, MB/s=32.92, GPUmem=0.82
+100.00%, ll=-3.59275, gf=10.266, secs=0.2, GB=0.01, MB/s=34.05, GPUmem=0.82
+Time=0.1870 secs, gflops=10.27
+
+scala> nn.train
+corpus perplexity=395.698584
+pass= 0
+ 6.00%, ll=-5.72718, gf=7.831, secs=0.0, GB=0.00, MB/s=26.75, GPUmem=0.82
+43.00%, ll=-4.75075, gf=8.903, secs=0.1, GB=0.00, MB/s=29.60, GPUmem=0.82
+80.00%, ll=-4.83455, gf=9.926, secs=0.2, GB=0.01, MB/s=32.92, GPUmem=0.82
+100.00%, ll=-3.57738, gf=9.457, secs=0.2, GB=0.01, MB/s=31.37, GPUmem=0.82
+Time=0.2030 secs, gflops=9.46
+
+CPU
+======
+
+1 loops, best of 1: 436 ms per loop
+
+=========
+===1000 rows
+========
+shape: (1000, 5389)
+
+val (nn,opts) = LDA.learner(a,k)
+==================================
+
+scala> size(a)
+res20: (Int, Int) = (1000,5389)
+
+scala> nn.train
+corpus perplexity=810.009324
+pass= 0
+ 6.00%, ll=-6.60674, gf=2.985, secs=0.1, GB=0.00, MB/s=10.21, GPUmem=0.82
+43.00%, ll=-5.70546, gf=11.960, secs=0.2, GB=0.01, MB/s=39.83, GPUmem=0.82
+80.00%, ll=-5.63866, gf=16.614, secs=0.3, GB=0.02, MB/s=55.21, GPUmem=0.82
+100.00%, ll=-4.50010, gf=18.010, secs=0.4, GB=0.02, MB/s=59.88, GPUmem=0.82
+Time=0.3600 secs, gflops=18.01
+
+scala> nn.train
+corpus perplexity=810.009324
+pass= 0
+ 6.00%, ll=-6.59601, gf=26.307, secs=0.0, GB=0.00, MB/s=90.00, GPUmem=0.82
+43.00%, ll=-5.67247, gf=25.094, secs=0.1, GB=0.01, MB/s=83.57, GPUmem=0.82
+80.00%, ll=-5.62200, gf=26.263, secs=0.2, GB=0.02, MB/s=87.27, GPUmem=0.82
+100.00%, ll=-4.40272, gf=24.842, secs=0.3, GB=0.02, MB/s=82.59, GPUmem=0.82
+Time=0.2610 secs, gflops=24.84
+
+scala> nn.train
+corpus perplexity=810.009324
+pass= 0
+ 6.00%, ll=-6.58768, gf=28.061, secs=0.0, GB=0.00, MB/s=96.00, GPUmem=0.82
+43.00%, ll=-5.72177, gf=29.899, secs=0.1, GB=0.01, MB/s=99.57, GPUmem=0.82
+80.00%, ll=-5.64389, gf=27.808, secs=0.2, GB=0.02, MB/s=92.41, GPUmem=0.82
+100.00%, ll=-4.45635, gf=27.708, secs=0.2, GB=0.02, MB/s=92.12, GPUmem=0.82
+Time=0.2340 secs, gflops=27.71
+
+CPU
+======
+
+1 loops, best of 1: 1.02 s per loop
+
+
+=========
+===5000 rows
+=========
+
+val (nn,opts) = LDA.learner(a,k)
+=================================
+scala> size(a)
+res28: (Int, Int) = (4999,15462)
+
+scala> nn.train
+corpus perplexity=4146.905753
+pass= 0
+ 6.00%, ll=-8.44930, gf=32.561, secs=0.2, GB=0.02, MB/s=111.55, GPUmem=0.82
+43.00%, ll=-7.84864, gf=84.118, secs=0.5, GB=0.13, MB/s=280.61, GPUmem=0.82
+80.00%, ll=-7.06723, gf=97.886, secs=0.8, GB=0.25, MB/s=325.83, GPUmem=0.82
+100.00%, ll=-6.49955, gf=99.605, secs=0.9, GB=0.31, MB/s=331.74, GPUmem=0.81
+Time=0.9320 secs, gflops=99.60
+
+scala> nn.train
+corpus perplexity=4146.905753
+pass= 0
+ 6.00%, ll=-8.45302, gf=97.159, secs=0.1, GB=0.02, MB/s=332.84, GPUmem=0.82
+43.00%, ll=-7.83899, gf=117.226, secs=0.3, GB=0.13, MB/s=391.06, GPUmem=0.82
+80.00%, ll=-7.10879, gf=119.029, secs=0.6, GB=0.25, MB/s=396.21, GPUmem=0.82
+100.00%, ll=-6.44621, gf=117.064, secs=0.8, GB=0.31, MB/s=389.88, GPUmem=0.81
+Time=0.7930 secs, gflops=117.06
+
+scala> nn.train
+corpus perplexity=4146.905753
+pass= 0
+ 6.00%, ll=-8.45312, gf=77.229, secs=0.1, GB=0.02, MB/s=264.56, GPUmem=0.82
+43.00%, ll=-7.85192, gf=111.690, secs=0.4, GB=0.13, MB/s=372.59, GPUmem=0.82
+80.00%, ll=-7.15732, gf=119.029, secs=0.6, GB=0.25, MB/s=396.21, GPUmem=0.82
+100.00%, ll=-6.53052, gf=118.863, secs=0.8, GB=0.31, MB/s=395.87, GPUmem=0.81
+Time=0.7810 secs, gflops=118.86
+
+CPU
+========
+1 loops, best of 1: 6.61 s per loop
+
+==========
+===10000 rows
+==========
+scala> size(a)
+res33: (Int, Int) = (9999,23314)
+
+val (nn,opts) = LDA.learner(a,k)
+=================================
+
+scala> nn.train
+corpus perplexity=8450.570776
+pass= 0
+ 6.00%, ll=-9.16730, gf=116.429, secs=0.2, GB=0.06, MB/s=398.93, GPUmem=0.81
+43.00%, ll=-8.57384, gf=141.456, secs=0.9, GB=0.40, MB/s=472.02, GPUmem=0.81
+80.00%, ll=-7.39507, gf=145.173, secs=1.5, GB=0.75, MB/s=483.37, GPUmem=0.81
+100.00%, ll=-7.37452, gf=143.463, secs=2.0, GB=0.93, MB/s=477.94, GPUmem=0.79
+Time=1.9510 secs, gflops=143.46
+
+scala> nn.train
+corpus perplexity=8450.570776
+pass= 0
+ 6.00%, ll=-9.16996, gf=116.429, secs=0.2, GB=0.06, MB/s=398.93, GPUmem=0.81
+43.00%, ll=-8.57650, gf=146.233, secs=0.8, GB=0.40, MB/s=487.96, GPUmem=0.81
+80.00%, ll=-7.43008, gf=147.755, secs=1.5, GB=0.75, MB/s=491.97, GPUmem=0.81
+100.00%, ll=-7.43447, gf=146.697, secs=1.9, GB=0.93, MB/s=488.71, GPUmem=0.79
+Time=1.9080 secs, gflops=146.70
+
+scala> nn.train
+corpus perplexity=8450.570776
+pass= 0
+ 6.00%, ll=-9.16761, gf=120.284, secs=0.2, GB=0.06, MB/s=412.14, GPUmem=0.81
+43.00%, ll=-8.57601, gf=147.299, secs=0.8, GB=0.40, MB/s=491.52, GPUmem=0.81
+80.00%, ll=-7.42314, gf=148.538, secs=1.5, GB=0.75, MB/s=494.57, GPUmem=0.81
+100.00%, ll=-7.42036, gf=147.237, secs=1.9, GB=0.93, MB/s=490.51, GPUmem=0.79
+Time=1.9010 secs, gflops=147.24
+
+CPU
+======
+
+1 loops, best of 1: 15 s per loop
+
+=============
+===15000 rows
+===========
+scala> size(a)
+res38: (Int, Int) = (14997,29297)
+
+val (nn,opts) = LDA.learner(a,k)
+====================================
+
+scala> nn.train
+corpus perplexity=12719.570276
+pass= 0
+ 6.00%, ll=-9.58568, gf=91.219, secs=0.4, GB=0.12, MB/s=312.58, GPUmem=0.79
+43.00%, ll=-9.03574, gf=136.547, secs=1.7, GB=0.76, MB/s=455.69, GPUmem=0.79
+80.00%, ll=-7.66944, gf=143.140, secs=3.0, GB=1.41, MB/s=476.65, GPUmem=0.79
+100.00%, ll=-7.91447, gf=142.517, secs=3.7, GB=1.76, MB/s=474.86, GPUmem=0.76
+Time=3.7010 secs, gflops=142.52
+
+scala> nn.train
+corpus perplexity=12719.570276
+pass= 0
+ 6.00%, ll=-9.58640, gf=121.733, secs=0.3, GB=0.12, MB/s=417.14, GPUmem=0.79
+43.00%, ll=-9.02924, gf=146.350, secs=1.6, GB=0.76, MB/s=488.40, GPUmem=0.79
+80.00%, ll=-7.57639, gf=150.698, secs=2.8, GB=1.41, MB/s=501.82, GPUmem=0.79
+100.00%, ll=-7.82600, gf=148.999, secs=3.5, GB=1.76, MB/s=496.46, GPUmem=0.76
+Time=3.5400 secs, gflops=149.00
+
+scala> nn.train
+corpus perplexity=12719.570276
+pass= 0
+ 6.00%, ll=-9.58630, gf=118.363, secs=0.3, GB=0.12, MB/s=405.59, GPUmem=0.79
+43.00%, ll=-9.03066, gf=147.771, secs=1.5, GB=0.76, MB/s=493.14, GPUmem=0.79
+80.00%, ll=-7.65659, gf=150.269, secs=2.8, GB=1.41, MB/s=500.39, GPUmem=0.79
+100.00%, ll=-7.88443, gf=143.136, secs=3.7, GB=1.76, MB/s=476.92, GPUmem=0.76
+Time=3.6850 secs, gflops=143.14
+
+1 loops, best of 1: 31.5 s per loop
+
+
+===============
+====20000 rows
+===============
+
+shape: (19996, 34295)
+
+CPU
+=====
+
+1 loops, best of 1: 51.6 s per loop
+
+===============
+====25000 rows
+===============
+
+shape: (24992, 38660)
+
+CPU
+=====
+
+1 loops, best of 1: 1min 12s per loop
+
+===============
+====30000 rows
+===============
+
+shape: (29988, 42561)
+
+CPU
+=====
+
+
+1 loops, best of 1: 1min 37s per loop
+
+
+
+
+
+
